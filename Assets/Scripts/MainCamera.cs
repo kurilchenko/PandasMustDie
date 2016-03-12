@@ -31,7 +31,7 @@ public class MainCamera : MonoBehaviour
 
 		GetComponent<Camera>().orthographicSize = Mathf.Lerp(currentCameraSize,newCameraSize,cameraZoomSpeed * Time.deltaTime);
 
-		Vector3 center = target2.transform.position + (target.transform.position - target2.transform.position) / 2f;
+		Vector3 center = target2.transform.position + (target.transform.position - target2.transform.position) / 2f + Vector3.up * 10f;
 
 		// Добавить
 		if(collectedFinalSym)

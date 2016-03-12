@@ -246,6 +246,7 @@ GameObject:
   - 114: {fileID: 219157414}
   - 212: {fileID: 219157417}
   - 61: {fileID: 219157416}
+  - 95: {fileID: 219157419}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -264,8 +265,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba1e738d5ebe4732a002ed88d7dc196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initSize: 0
+  scaleTime: 0.5
+  regularScale: 1
+  largeScale: 2
+  smallScale: 0.5
+  regularMass: 1
+  largeMass: 300
+  smallMass: 0.01
   characterSpeed: 0.3
-  jumpPower: 30
+  jumpPower: 45
   laserRotationSpeed: 2
   firstPlayer: 1
   gun: {fileID: 1624548739}
@@ -280,7 +289,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 2
   m_AngularDrag: 7
-  m_GravityScale: 5
+  m_GravityScale: 10
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -297,7 +306,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 4.545}
+  m_Offset: {x: 0, y: 5}
   serializedVersion: 2
   m_Size: {x: 5.25, y: 9.09}
 --- !u!212 &219157417
@@ -326,7 +335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e1455118d31544a4196d653bfd2564e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4b5693883290b84b8dde4fe78198b82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -343,6 +352,23 @@ Transform:
   - {fileID: 1624548740}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!95 &219157419
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219157413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec6882d22ee57447ea06527451b47a41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &314746434
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +660,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.31
+  orthographic size: 40
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -655,7 +681,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429429844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -673,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 219157418}
   target2: {fileID: 1920455326}
-  normalCameraSize: 7.5
+  normalCameraSize: 30
   newCameraSize: 0
   collectedFinalSym: 0
   cameraZoomSpeed: 1
@@ -1376,7 +1402,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1624548739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 5.84, z: 0}
+  m_LocalPosition: {x: 0.75, y: 6.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 581174802}
@@ -1457,6 +1483,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba1e738d5ebe4732a002ed88d7dc196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initSize: 0
+  scaleTime: 0.5
+  regularScale: 1
+  largeScale: 2
+  smallScale: 0.5
+  regularMass: 1
+  largeMass: 300
+  smallMass: 0.01
   characterSpeed: 0.3
   jumpPower: 30
   laserRotationSpeed: 2
