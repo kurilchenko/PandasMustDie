@@ -42,6 +42,8 @@ public class Actor : MonoBehaviour
         {
             _size = value;
 
+			//Debug.LogWarning (value);
+
             var targetScale = regularScale;
 
             Scale = GetScale(_size);
@@ -94,7 +96,7 @@ public class Actor : MonoBehaviour
             _scale = value;
 
             LeanTween.cancel(gameObject);
-            LeanTween.scale(gameObject, Vector3.one * _scale, scaleTime).setEase(LeanTweenType.easeInOutSine);
+			LeanTween.scale(gameObject, Vector3.one * _scale, scaleTime).setEase(LeanTweenType.easeInOutSine);
         }
     }
 

@@ -71,10 +71,11 @@ public class Player : Actor
 
 		float dir = Input.GetAxis (firstPlayer ? "Horizontal_" : "Horizontal2_");
 
-		if (dir < 0 && transform.localScale.x > 0)
-			transform.localScale = new Vector3 (-1, 1, 1);
-		else if (dir > 0 && transform.localScale.x < 0)
-			transform.localScale = Vector3.one;
+		if (dir < 0 && transform.localEulerAngles.y == 0)
+			transform.localEulerAngles = Vector3.up * 180f;
+			//transform.localScale = new Vector3 (-1, 1, 1);
+		else if (dir > 0 && transform.localEulerAngles.y == 180f)//transform.localScale.x < 0)
+			transform.localEulerAngles = Vector3.zero;
 
 		//rigidbody.AddForce (Vector2.right * horizontal, ForceMode2D.Impulse);
 		if (horizontal != 0)
