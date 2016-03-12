@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Commence()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Game");
     }
 
     public void Abort()
