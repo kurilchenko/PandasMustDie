@@ -376,6 +376,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1001 &410303097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1908043596}
+    m_Modifications:
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.49999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19834748, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19834748, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &797768630
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +598,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &1074845225 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 489222, guid: 7daa9c5ec6be47442b6f30632cc2c804, type: 2}
+  m_PrefabInternal: {fileID: 410303097}
+--- !u!198 &1074845227 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 19834748, guid: 7daa9c5ec6be47442b6f30632cc2c804,
+    type: 2}
+  m_PrefabInternal: {fileID: 410303097}
 --- !u!1 &1156656775
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +864,8 @@ GameObject:
   - 4: {fileID: 1908043596}
   - 114: {fileID: 1908043595}
   - 120: {fileID: 1908043597}
+  - 50: {fileID: 1908043599}
+  - 114: {fileID: 1908043598}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -821,6 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunpoint: {fileID: 797768631}
   rayState: 0
+  rayParticles: {fileID: 1074845227}
 --- !u!4 &1908043596
 Transform:
   m_ObjectHideFlags: 0
@@ -832,6 +898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 797768631}
+  - {fileID: 1074845225}
   m_Father: {fileID: 0}
   m_RootOrder: 7
 --- !u!120 &1908043597
@@ -873,3 +940,44 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 1
+--- !u!114 &1908043598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908043594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba1e738d5ebe4732a002ed88d7dc196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initSize: 0
+  scaleTime: 0.5
+  regularScale: 1
+  largeScale: 2
+  smallScale: 0.5
+  regularMass: 1
+  largeMass: 300
+  smallMass: 0.01
+  characterSpeed: 0.3
+  jumpPower: 20
+  laserRotationSpeed: 2
+  firstPlayer: 1
+  gun: {fileID: 0}
+--- !u!50 &1908043599
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908043594}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     public Actor.SizeEnum rayState;
 
     LineRenderer line;
-    float rayMinWidth = 0.05f;
+    float rayMinWidth = 0.5f;
     float rayMaxWidth = 0.1f;
     Vector3 rayOrigin;
     Vector3 rayHit;
@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
     {
         var isShooting = true;
 
-		if (Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button8 : KeyCode.Joystick4Button8))
+		if ((Input.GetKeyDown(KeyCode.Alpha1)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button8 : KeyCode.Joystick4Button8))
         {
 			if(rayState == Actor.SizeEnum.Regular)
             	rayState = Actor.SizeEnum.Small;
@@ -43,7 +43,7 @@ public class Gun : MonoBehaviour
 
 			Debug.LogWarning (rayState);
         }
-		else if(Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button9 : KeyCode.Joystick4Button9))
+		else if((Input.GetKeyDown(KeyCode.Alpha2)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button9 : KeyCode.Joystick4Button9))
 		{
 			if (rayState == Actor.SizeEnum.Small)
 				rayState = Actor.SizeEnum.Regular;
@@ -126,7 +126,6 @@ public class Gun : MonoBehaviour
     {
         line.SetPosition(0, gunpoint.transform.position);
         line.SetPosition(1, rayHit);
-
         line.SetWidth(rayMinWidth, rayMinWidth);
     }
 
@@ -134,9 +133,7 @@ public class Gun : MonoBehaviour
     {
         Debug.Log("Stop visualization");
         isVisualizingRay = false;
-
         line.SetWidth(0f, 0f);
-
         CancelInvoke("SetOffVisualization");
     }
 
