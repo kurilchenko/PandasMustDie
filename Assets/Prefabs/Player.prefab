@@ -11,10 +11,10 @@ GameObject:
   - 50: {fileID: 5050998}
   - 114: {fileID: 11416760}
   - 212: {fileID: 21284446}
-  - 61: {fileID: 6144104}
   - 95: {fileID: 9577698}
   - 120: {fileID: 12009522}
   - 114: {fileID: 11442276}
+  - 58: {fileID: 5813620}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.59, y: 0.32, z: 0}
+  m_LocalPosition: {x: 3.9, y: 46.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468794}
@@ -168,8 +168,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6144104
-BoxCollider2D:
+--- !u!58 &5813620
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -179,9 +179,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 5}
+  m_Offset: {x: 0, y: 5.12}
   serializedVersion: 2
-  m_Size: {x: 5.25, y: 9.09}
+  m_Radius: 5.12
 --- !u!61 &6175858
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -233,7 +233,7 @@ MonoBehaviour:
   largeMass: 300
   smallMass: 0.01
   characterSpeed: 0.3
-  jumpPower: 45
+  jumpPower: 80
   laserRotationSpeed: 2
   sensorGround: {fileID: 11469734}
   firstPlayer: 1
