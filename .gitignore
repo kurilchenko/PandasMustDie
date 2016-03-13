@@ -32,3 +32,5 @@ obj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+ProjectSettings/ProjectVersion.txt
