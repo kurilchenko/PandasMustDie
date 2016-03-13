@@ -47,7 +47,7 @@ public class Gun : MonoBehaviour
 			else if(rayState == Actor.SizeEnum.Large)
 				rayState = Actor.SizeEnum.Regular;
 
-			line.material.color = enlargerColor;
+			line.material.color = reducerColor;
 
 			Debug.LogWarning (rayState);
         }
@@ -58,7 +58,7 @@ public class Gun : MonoBehaviour
 			else if(rayState == Actor.SizeEnum.Regular)
 				rayState = Actor.SizeEnum.Large;
 
-			line.material.color = reducerColor;
+			line.material.color = enlargerColor;
 
 			Debug.LogWarning (rayState);
 		}
