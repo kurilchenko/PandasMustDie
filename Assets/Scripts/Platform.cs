@@ -14,7 +14,9 @@ public class Platform : Block
     void Update()
     {
         if (sensor == null)
-            return; 
+            return;
+
+        sensor.actors.RemoveAll(a => a == null);
 
         foreach (var actor in sensor.actors)
         {
