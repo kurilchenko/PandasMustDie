@@ -249,7 +249,7 @@ GameObject:
   - 95: {fileID: 219157419}
   - 120: {fileID: 219157421}
   - 114: {fileID: 219157420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -384,6 +384,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunpoint: {fileID: 1227000628}
   rayState: 0
+  shootLayer:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  enlargerColor: {r: 1, g: 0, b: 0, a: 1}
+  reducerColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!120 &219157421
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -752,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 219157418}
-  target2: {fileID: 219157418}
+  target2: {fileID: 1693129690}
   normalCameraSize: 30
   newCameraSize: 0
   collectedFinalSym: 0
@@ -882,7 +887,7 @@ GameObject:
   - 4: {fileID: 581174802}
   - 212: {fileID: 581174803}
   - 120: {fileID: 581174805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1099,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1227000628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gunpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1126,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1448753665}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gunpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1457,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1624548740}
   - 120: {fileID: 1624548742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1521,7 +1526,7 @@ GameObject:
   - 4: {fileID: 1685915420}
   - 212: {fileID: 1685915422}
   - 120: {fileID: 1685915421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,7 +1630,7 @@ GameObject:
   - 95: {fileID: 1693129685}
   - 120: {fileID: 1693129684}
   - 114: {fileID: 1693129683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1645,6 +1650,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunpoint: {fileID: 1448753665}
   rayState: 0
+  shootLayer:
+    serializedVersion: 2
+    m_Bits: 4294966783
+  enlargerColor: {r: 1, g: 0, b: 0, a: 1}
+  reducerColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!120 &1693129684
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1808,7 +1818,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1764844200}
   - 120: {fileID: 1764844201}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

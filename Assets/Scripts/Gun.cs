@@ -21,13 +21,19 @@ public class Gun : MonoBehaviour
     Vector3 rayOrigin;
     Vector3 rayHit;
     bool isVisualizingRay;
+	public LayerMask shootLayer;
+	public Color enlargerColor = Color.red;
+	public Color reducerColor = Color.blue;
 
 	Player player;
+	int layer = 0, layer2 = 0;
 
     void Start()
     {
         line = GetComponent<LineRenderer>();
 		player = GetComponent<Player> ();
+		layer = LayerMask.NameToLayer ("Player");
+		layer2 = LayerMask.NameToLayer ("Player2");
     }
 
     void Update()
@@ -41,6 +47,8 @@ public class Gun : MonoBehaviour
 			else if(rayState == Actor.SizeEnum.Large)
 				rayState = Actor.SizeEnum.Regular;
 
+			line.material.color = enlargerColor;
+
 			Debug.LogWarning (rayState);
         }
 		else if((Input.GetKeyDown(KeyCode.Alpha2)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button9 : KeyCode.Joystick4Button9))
@@ -49,6 +57,8 @@ public class Gun : MonoBehaviour
 				rayState = Actor.SizeEnum.Regular;
 			else if(rayState == Actor.SizeEnum.Regular)
 				rayState = Actor.SizeEnum.Large;
+
+			line.material.color = reducerColor;
 
 			Debug.LogWarning (rayState);
 		}
@@ -95,7 +105,7 @@ public class Gun : MonoBehaviour
     {
         var originPoint2D = new Vector2(gunpoint.position.x, gunpoint.position.y);
 		var direction2D = new Vector2(gunpoint.right.x, gunpoint.right.y);
-        var hit = Physics2D.Raycast(originPoint2D, direction2D);
+		var hit = Physics2D.Raycast(originPoint2D, direction2D, Mathf.Infinity, shootLayer);
 
         if (hit.transform == null)
         {
