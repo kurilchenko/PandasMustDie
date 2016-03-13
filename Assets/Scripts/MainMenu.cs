@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Commence()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("ArenaPandaTest");
     }
 
     public void Abort()
