@@ -21,6 +21,8 @@ public class Block : MonoBehaviour
     protected virtual void OnActorEnter(Actor actor)
     {
         //Debug.Log("Actor entered platform: " + actor);
+        if (actor == null)
+            return;
 
         actor.transform.parent = transform;
     }
@@ -28,6 +30,8 @@ public class Block : MonoBehaviour
     protected virtual void OnActorExit(Actor actor)
     {
         //Debug.Log("Actor exited platform: " + actor);
+        if (actor == null)
+            return;
 
         actor.transform.parent = null;
     }
