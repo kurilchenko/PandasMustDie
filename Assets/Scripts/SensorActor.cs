@@ -18,6 +18,9 @@ public class SensorActor : MonoBehaviour
 
         var actor = target.attachedRigidbody.gameObject.GetComponent<Actor>();
 
+        if (actor == null)
+            return;
+
         actors.Remove(actor);
         actors.Add(actor);
 
@@ -33,6 +36,9 @@ public class SensorActor : MonoBehaviour
             return;
 
         var actor = target.attachedRigidbody.gameObject.GetComponent<Actor>();
+
+        if (actor == null)
+            return;
 
         actors.Remove(actor);
 

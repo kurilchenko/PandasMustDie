@@ -65,9 +65,11 @@ public class PandaManipulator : MonoBehaviour
             {
                 pandaInHand = pandas[0];
                 pandaInHand.transform.parent = transform;
-                pandaInHand.transform.transform.position = holdPoint.position;
+                pandaInHand.transform.position = holdPoint.position;
+                pandaInHand.transform.rotation = Quaternion.identity;
                 pandaInHand.GetComponent<Rigidbody2D>().isKinematic = true;
                 pandaInHand.GetComponent<Rigidbody2D>().GetComponentInChildren<Collider2D>().isTrigger = true;
+                pandaInHand.isBusy = true;
             }
             else if (pandaInHand != null)
             {
@@ -75,8 +77,10 @@ public class PandaManipulator : MonoBehaviour
                 pandaInHand.SetFly();
                 pandaInHand.transform.parent = null;
                 pandaInHand.GetComponent<Rigidbody2D>().isKinematic = false;
+                pandaInHand.GetComponent<Rigidbody2D>().AddForce(holdPoint.right * throwForce, ForceMode2D.Impulse);
+                Debug.Log(pandaInHand.GetComponent<Rigidbody2D>().velocity);
                 pandaInHand.GetComponent<Rigidbody2D>().GetComponentInChildren<Collider2D>().isTrigger = false;
-                pandaInHand.GetComponent<Rigidbody2D>().AddForce(holdPoint.right * Time.deltaTime * throwForce, ForceMode2D.Impulse);
+                pandaInHand.isBusy = false;
                 pandaInHand = null;
             }
         }

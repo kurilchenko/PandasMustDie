@@ -21,7 +21,7 @@ public class Block : MonoBehaviour
     protected virtual void OnActorEnter(Actor actor)
     {
         //Debug.Log("Actor entered platform: " + actor);
-        if (actor == null)
+        if (actor == null || actor.isBusy)
             return;
 
         actor.transform.parent = transform;

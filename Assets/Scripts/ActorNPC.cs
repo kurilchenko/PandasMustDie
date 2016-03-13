@@ -5,7 +5,6 @@ public class ActorNPC : Actor
 {
 	public float speed = 3f;
 	public float gravity = 10f;
-    public bool isBusy;
     public bool isFlying;
 
     public void SetFly()

@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.5, y: -0.44416416, z: 0}
+  m_LocalPosition: {x: -21, y: 52.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 1
   m_AngularDrag: 1
-  m_GravityScale: 5
+  m_GravityScale: 30
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -96,12 +96,12 @@ MonoBehaviour:
   regularScale: 1
   largeScale: 2
   smallScale: 0.5
-  regularMass: 1
+  regularMass: 10
   largeMass: 300
-  smallMass: 0.01
+  smallMass: 10
+  isBusy: 0
   speed: 10
   gravity: 10
-  isBusy: 0
   isFlying: 0
 --- !u!212 &21261458
 SpriteRenderer:

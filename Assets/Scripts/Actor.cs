@@ -28,6 +28,7 @@ public class Actor : MonoBehaviour
     public float regularMass = 1f;
     public float largeMass = 300f;
     public float smallMass = 0.01f;
+    public bool isBusy;
 
     protected SizeEnum _size;
     protected float _scale;

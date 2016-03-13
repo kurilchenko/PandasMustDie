@@ -849,6 +849,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 388584580}
   - 61: {fileID: 388584579}
+  - 114: {fileID: 388584581}
   m_Layer: 0
   m_Name: Respawner
   m_TagString: Untagged
@@ -882,6 +883,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &388584581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388584578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ecf29d7943b4048a105859cc4118cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &408218103 stripped
 Transform:
   m_PrefabParentObject: {fileID: 427230, guid: 8f9194f21ec65b54b88269643b3e10ac, type: 2}
@@ -1566,11 +1578,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423934, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.346927
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 423934, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 54.651253
+      value: 52.4
       objectReference: {fileID: 0}
     - target: {fileID: 423934, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1599,10 +1611,6 @@ Prefab:
     - target: {fileID: 136394, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
       propertyPath: m_Name
       value: Panda (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5010580, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
-      propertyPath: m_GravityScale
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac4d7f9b93d3547fcb5b5bb6e4c5d163, type: 2}
@@ -1737,7 +1745,7 @@ MonoBehaviour:
   sensor: {fileID: 1150408094}
   pandas: []
   holdPoint: {fileID: 160625688}
-  throwForce: 6050
+  throwForce: 1000
   pandaInHand: {fileID: 0}
 --- !u!1 &863235625
 GameObject:
