@@ -4,6 +4,8 @@ using System.Collections;
 public class Platform : Block
 {
 
+    public Actor.SizeEnum TargetSize;
+
     void Start()
     {
           	
@@ -16,7 +18,7 @@ public class Platform : Block
 
         foreach (var actor in sensor.actors)
         {
-            if (actor.Size == Actor.SizeEnum.Large)
+            if (actor.Size == TargetSize)
             {
                 GetComponent<Rigidbody2D>().isKinematic = false;
             }
