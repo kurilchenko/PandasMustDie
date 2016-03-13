@@ -17,7 +17,7 @@ public class Player : Actor
     public GameObject gun;
 
 
-    private bool IsGrounded
+	public bool IsGrounded
     {
         get
         {
