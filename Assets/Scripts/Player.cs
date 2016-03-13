@@ -9,6 +9,7 @@ public class Player : Actor
     public float jumpPower = 20f;
     public float laserRotationSpeed = 2f;
     public SensorGround sensorGround;
+	public AudioClip jumpClip;
 
     public bool firstPlayer = true;
 
@@ -126,6 +127,8 @@ public class Player : Actor
 
         if (IsGrounded && (Input.GetKeyDown(firstPlayer ? KeyCode.Joystick1Button14 : KeyCode.Joystick2Button14) || Input.GetKeyDown(firstPlayer ? KeyCode.LeftShift : KeyCode.RightShift)))
         {
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<AudioSource> ().clip = jumpClip;
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<AudioSource> ().Play ();
 			animator.SetBool ("condition", false);
 			animator.SetBool ("jump", true);
 			animator.CrossFade("Jump", 0);
