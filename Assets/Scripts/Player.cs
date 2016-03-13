@@ -23,6 +23,8 @@ public class Player : Actor
 
 	protected override void Start()
 	{
+        base.Start();
+
 		rigidbody = GetComponent<Rigidbody2D> ();
 		gameObject.tag = "Astronaut";
 		animator = GetComponent<Animator> ();
