@@ -13,12 +13,8 @@ public class SensorGround : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.attachedRigidbody == null)
-            return;
 
-        var potentialGround = target.attachedRigidbody.gameObject;
-
-        Debug.Log(target.attachedRigidbody.gameObject);
+        var potentialGround = target.gameObject;
 
         if (potentialGround.tag != "Ground")
             return;
@@ -34,10 +30,8 @@ public class SensorGround : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D target)
     {
-        if (target.attachedRigidbody == null)
-            return;
 
-        var potentialGround = target.attachedRigidbody.gameObject;
+        var potentialGround = target.attachedRigidbody != null ? target.attachedRigidbody.gameObject : target.gameObject;
 
         if (potentialGround.tag != "Ground")
             return;

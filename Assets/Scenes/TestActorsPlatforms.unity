@@ -96,7 +96,6 @@ GameObject:
   - 33: {fileID: 13576929}
   - 23: {fileID: 13576928}
   - 61: {fileID: 13576927}
-  - 50: {fileID: 13576931}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Ground
@@ -163,23 +162,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!50 &13576931
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 13576926}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &181025120
 GameObject:
   m_ObjectHideFlags: 0
