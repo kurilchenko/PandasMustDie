@@ -115,7 +115,7 @@ public class Player : Actor
         gun.transform.localEulerAngles = new Vector3(0, 0, gunRotation);
 
 
-        if (IsGrounded && (Input.GetKeyDown(firstPlayer ? KeyCode.Joystick3Button14 : KeyCode.Joystick4Button14) || Input.GetKeyDown(firstPlayer ? KeyCode.LeftShift : KeyCode.RightShift)))
+        if (IsGrounded && (Input.GetKeyDown(firstPlayer ? KeyCode.Joystick1Button14 : KeyCode.Joystick2Button14) || Input.GetKeyDown(firstPlayer ? KeyCode.LeftShift : KeyCode.RightShift)))
         {
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpPower);
             //rigidbody.AddRelativeForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
