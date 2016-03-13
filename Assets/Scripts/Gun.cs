@@ -40,7 +40,7 @@ public class Gun : MonoBehaviour
     {
         var isShooting = true;
 
-		if ((Input.GetKeyDown(KeyCode.Alpha1)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button8 : KeyCode.Joystick4Button8))
+		if ((Input.GetKeyDown(player.firstPlayer ? KeyCode.Q : KeyCode.U)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button8 : KeyCode.Joystick4Button8))
         {
 			if(rayState == Actor.SizeEnum.Regular)
             	rayState = Actor.SizeEnum.Small;
@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
 
 			Debug.LogWarning (rayState);
         }
-		else if((Input.GetKeyDown(KeyCode.Alpha2)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button9 : KeyCode.Joystick4Button9))
+		else if((Input.GetKeyDown(player.firstPlayer ? KeyCode.E : KeyCode.O)) || Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick3Button9 : KeyCode.Joystick4Button9))
 		{
 			if (rayState == Actor.SizeEnum.Small)
 				rayState = Actor.SizeEnum.Regular;
