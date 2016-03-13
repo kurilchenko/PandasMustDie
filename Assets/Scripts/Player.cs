@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : Actor
 {
@@ -95,15 +96,21 @@ public class Player : Actor
             transform.localEulerAngles = Vector3.zero;
 
         //rigidbody.AddForce (Vector2.right * horizontal, ForceMode2D.Impulse);
-        if (horizontal != 0)
+		if (horizontal != 0)
         {
-            animator.CrossFade("New Animation", 0);
+			if(IsGrounded)
+            	animator.CrossFade("New Animation", 0);
             rigidbody.velocity = new Vector2(horizontal * 20f, rigidbody.velocity.y);
 
         }
         else
         {
-            animator.CrossFade("New State", 0);
+			if (!animator.GetBool("jump"))
+			{
+				//animator.SetBool ("jump", false);
+				animator.SetBool ("condition", true);
+				animator.CrossFade ("New State", 0);
+			}
         }
 
 
@@ -119,8 +126,20 @@ public class Player : Actor
 
         if (IsGrounded && (Input.GetKeyDown(firstPlayer ? KeyCode.Joystick1Button14 : KeyCode.Joystick2Button14) || Input.GetKeyDown(firstPlayer ? KeyCode.LeftShift : KeyCode.RightShift)))
         {
+			animator.SetBool ("condition", false);
+			animator.SetBool ("jump", true);
+			animator.CrossFade("Jump", 0);
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpPower);
+			StartCoroutine (Wait ());
             //rigidbody.AddRelativeForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }
+
+	IEnumerator Wait()
+	{
+		yield return new WaitForSeconds (1.5f);
+
+		animator.SetBool ("jump", false);
+	}
+
 }

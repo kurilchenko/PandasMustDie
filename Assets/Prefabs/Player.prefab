@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &107238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 459404}
+  m_Layer: 8
+  m_Name: HoldPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &112312
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +30,7 @@ GameObject:
   - 120: {fileID: 12009522}
   - 114: {fileID: 11442276}
   - 58: {fileID: 5813620}
+  - 114: {fileID: 11495272}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -87,6 +103,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &158006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 492046}
+  - 61: {fileID: 6131488}
+  - 114: {fileID: 11438510}
+  m_Layer: 2
+  m_Name: PandaSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &409916
 Transform:
   m_ObjectHideFlags: 1
@@ -99,6 +132,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 492290}
   m_RootOrder: 0
+--- !u!4 &459404
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107238}
+  m_LocalRotation: {x: 0, y: 0, z: 0.45768934, w: 0.88911223}
+  m_LocalPosition: {x: 0.5, y: 12.300003, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486410}
+  m_RootOrder: 3
 --- !u!4 &468794
 Transform:
   m_ObjectHideFlags: 1
@@ -131,13 +176,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.59, y: 0.32, z: 0}
+  m_LocalPosition: {x: -48.5, y: 76.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468794}
   - {fileID: 486188}
+  - {fileID: 492046}
+  - {fileID: 459404}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &492046
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486410}
+  m_RootOrder: 2
 --- !u!4 &492290
 Transform:
   m_ObjectHideFlags: 1
@@ -182,6 +241,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 5.12}
   serializedVersion: 2
   m_Radius: 4.64
+--- !u!61 &6131488
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158006}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.4083023, y: 5.1791534}
+  serializedVersion: 2
+  m_Size: {x: 13.842897, y: 14.624672}
 --- !u!61 &6175858
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -232,12 +305,25 @@ MonoBehaviour:
   regularMass: 1
   largeMass: 300
   smallMass: 0.01
+  isBusy: 0
   characterSpeed: 0.3
-  jumpPower: 80
+  jumpPower: 120
   laserRotationSpeed: 2
   sensorGround: {fileID: 11469734}
   firstPlayer: 1
   gun: {fileID: 145926}
+--- !u!114 &11438510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b69cde97e7e432479f9b0ed10042fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actors: []
 --- !u!114 &11442276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,6 +354,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounds: []
+--- !u!114 &11495272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b93f90308e3ab45ae8a9b2f16fad14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensor: {fileID: 11438510}
+  pandas: []
+  holdPoint: {fileID: 459404}
+  throwForce: 1000
+  pandaInHand: {fileID: 0}
 --- !u!120 &12009522
 LineRenderer:
   m_ObjectHideFlags: 1

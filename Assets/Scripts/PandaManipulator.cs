@@ -59,7 +59,9 @@ public class PandaManipulator : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(player.firstPlayer ? KeyCode.LeftControl : KeyCode.RightControl))
+		if (Input.GetKeyDown (KeyCode.Joystick2Button15))
+			Debug.LogWarning (player.firstPlayer);
+		if (Input.GetKeyDown(player.firstPlayer ? KeyCode.Joystick1Button15 : KeyCode.Joystick2Button15))
         {
             if (pandaInHand == null && pandas.Count != 0)
             {
