@@ -31,6 +31,7 @@ public class Actor : MonoBehaviour
 
     protected SizeEnum _size;
     protected float _scale;
+    protected Vector3 initScale;
 
     public SizeEnum Size
     {
@@ -96,7 +97,7 @@ public class Actor : MonoBehaviour
             _scale = value;
 
             LeanTween.cancel(gameObject);
-			LeanTween.scale(gameObject, Vector3.one * _scale, scaleTime).setEase(LeanTweenType.easeInOutSine);
+			LeanTween.scale(gameObject, initScale * _scale, scaleTime).setEase(LeanTweenType.easeInOutSine);
         }
     }
 
@@ -104,7 +105,7 @@ public class Actor : MonoBehaviour
     {
         //_scale = GetScale(initSize);
         //transform.localScale = Vector3.one * _scale;
-
+        initScale = transform.localScale;
         var prevAnimTime = scaleTime;
         scaleTime = 0.001f;
         Size = initSize;
