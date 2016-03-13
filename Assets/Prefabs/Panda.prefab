@@ -99,8 +99,10 @@ MonoBehaviour:
   regularMass: 1
   largeMass: 300
   smallMass: 0.01
-  speed: 8
+  speed: 10
   gravity: 10
+  isBusy: 0
+  isFlying: 0
 --- !u!212 &21261458
 SpriteRenderer:
   m_ObjectHideFlags: 1
