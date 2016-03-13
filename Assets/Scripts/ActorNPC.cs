@@ -4,10 +4,11 @@ using System.Collections;
 public class ActorNPC : Actor
 {
 	public float speed = 3f;
+	public float gravity = 10f;
 
 	void FixedUpdate()
 	{
-		GetComponent<Rigidbody2D> ().velocity = transform.right * speed;
+		GetComponent<Rigidbody2D> ().velocity = transform.right * speed - Vector3.up * gravity;
 	}
 
 	void OnCollisionEnter2D(Collision2D col)
