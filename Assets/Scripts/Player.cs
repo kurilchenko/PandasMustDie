@@ -37,10 +37,12 @@ public class Player : Actor
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+	public override void Update() 
     {
-
+		base.Update ();
         InputControl();
+
+
     }
 
     void OnCollisionEnter2D(Collision2D col)

@@ -86,6 +86,12 @@ public class Actor : MonoBehaviour
         return targetScale;
     }
 
+	virtual public void Update()
+	{
+		if (transform.position.y < -50)
+			transform.position = Vector3.up * 80f + Vector3.right*Random.Range(-1f, 1f)*60f;
+	}
+
     public float Scale
     {
         get
